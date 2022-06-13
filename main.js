@@ -1,4 +1,3 @@
-
 /*created by prashant shukla */
 
 var paddle2 =10,paddle1=10;
@@ -12,7 +11,7 @@ var paddle1Y;
 var  playerscore =0;
 var audio1;
 var pcscore =0;
-//ball x e y, speedx, speedy e radius
+//Coordenadas x e y da bola, speedx e speedy e radius
 var ball = {
     x:350/2,
     y:480/2,
@@ -38,10 +37,10 @@ function draw(){
  stroke("black");
  rect(0,0,20,700);
  
-   //função paddleInCanvas 
+   //Chamar a função paddleInCanvas() 
    paddleInCanvas();
  
-   //raquete do jogador
+   //Raquete do jogador
    fill(250,0,0);
     stroke(0,0,250);
     strokeWeight(0.5);
@@ -49,27 +48,27 @@ function draw(){
    rect(paddle1X,paddle1Y,paddle1,paddle1Height,100);
    
    
-    //raquete do computador
+    //Raquete do computador
     fill("#FFA500");
     stroke("#FFA500");
    var paddle2y =ball.y-paddle2Height/2;  rect(paddle2Y,paddle2y,paddle2,paddle2Height,100);
     
-    //chamar a função midline
+    //Chamar a função midline()
     midline();
     
-    //chamar a função drawScore 
+    //Chamar a função drawScore() 
    drawScore();
    
-   //chamar a função models  
+   //Chamar a função models()  
    models();
    
-   //chamar a função move, que é muito importante para o jogo
+   //Chamar a função move() (muito importante para o jogo)
     move();
 }
 
 
 
-//A função reset é chamada quando a bola não entra em contato com a raquete
+//Função reset() para quando a bola não tocar a raquete
 function reset(){
    ball.x = width/2+100,
    ball.y = height/2+100;
@@ -79,7 +78,7 @@ function reset(){
 }
 
 
-//A função midline desenha um linha no centro do canvas
+//Função midline() para desenhar uma linha no centro
 function midline(){
     for(i=0;i<480;i+=10) {
     var y = 0;
@@ -90,20 +89,20 @@ function midline(){
 }
 
 
-//A função drawScore mostra os pontos
+//Função drawScore() para exibir o placar
 function drawScore(){
     textAlign(CENTER);
     textSize(20);
     fill("white");
     stroke(250,0,0)
-    text("Jogador:",100,50)
-    text(playerscore,190,50);
-    text("Computador:",500,50)
-    text(pcscore,600,50)
+    text("Player:",100,50)
+    text(playerscore,140,50);
+    text("Computer:",500,50)
+    text(pcscore,555,50)
 }
 
 
-//função importante para o jogo
+//Função muito importante para o jogo
 function move(){
    fill(50,350,0);
    stroke(255,0,0);
@@ -116,7 +115,8 @@ function move(){
    }
   if (ball.x-2.5*ball.r/2< 0){
   if (ball.y >= paddle1Y&& ball.y <= paddle1Y + paddle1Height) {
-    ball.dx = -ball.dx+0.5; 
+    ball.dx = -ball.dx+0.5;
+    playerscore++;
   }
   else{
     pcscore++;
@@ -132,7 +132,7 @@ if(pcscore ==4){
     stroke("white");
     textSize(25)
     text("Game Over!☹☹",width/2,height/2);
-    text("Recarregue a página!",width/2,height/2+30)
+    text("Reload The Page!",width/2,height/2+30)
     noLoop();
     pcscore = 0;
 }
@@ -142,18 +142,18 @@ if(pcscore ==4){
 }
 
 
-//Largura e Altura do canvas e velocidade da bola 
+//Largura e altura do canvas e velocidade da bola 
 function models(){
     textSize(18);
     fill(255);
     noStroke();
-    text("Largura:"+width,200,15);
-    text("Velocidade:"+abs(ball.dx),70,15);
-    text("Altura:"+height,300,15)
+    text("Width:"+width,135,15);
+    text("Speed:"+abs(ball.dx),50,15);
+    text("Height:"+height,235,15)
 }
 
 
-//Esta função evita que as raquetes saiam do canvas
+//Esta função ajuda a evitar que a raquete saia do canvas
 function paddleInCanvas(){
   if(mouseY+paddle1Height > height){
     mouseY=height-paddle1Height;
