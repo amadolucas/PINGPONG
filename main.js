@@ -93,7 +93,7 @@ function midline(){
 function drawScore(){
     textAlign(CENTER);
     textSize(20);
-    fill("red");
+    fill("white");
     stroke(250,0,0)
     text("Jogador:",100,50)
     text(playerscore,180,50);
@@ -145,7 +145,7 @@ if(pcscore ==4){
 //Largura e altura do canvas e velocidade da bola 
 function models(){
     textSize(18);
-    fill(255);
+    fill('red');
     noStroke();
     text("Largura:"+width,195,15);
     text("Velocidade:"+abs(ball.dx),65,15);
