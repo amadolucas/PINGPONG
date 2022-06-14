@@ -82,7 +82,7 @@ function reset(){
 function midline(){
     for(i=0;i<480;i+=10) {
     var y = 0;
-    fill("white");
+    fill("red");
     stroke(0);
     rect(width/2,y+i,10,480);
     }
@@ -93,7 +93,7 @@ function midline(){
 function drawScore(){
     textAlign(CENTER);
     textSize(20);
-    fill("white");
+    fill("red");
     stroke(250,0,0)
     text("Jogador:",100,50)
     text(playerscore,180,50);
