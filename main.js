@@ -128,8 +128,8 @@ if(pcscore ==4){
     fill("#FFA500");
     stroke(0)
     rect(0,0,width,height-1);
-    fill("white");
-    stroke("white");
+    fill("red");
+    stroke("red");
     textSize(25)
     text("Game Over!☹☹",width/2,height/2);
     text("Recarregue a página!",width/2,height/2+30)
