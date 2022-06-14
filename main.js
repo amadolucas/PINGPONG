@@ -93,7 +93,7 @@ function midline(){
 function drawScore(){
     textAlign(CENTER);
     textSize(20);
-    fill("white");
+    fill("red");
     stroke(250,0,0)
     text("Jogador:",100,50)
     text(playerscore,180,50);
