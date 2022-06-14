@@ -82,7 +82,7 @@ function reset(){
 function midline(){
     for(i=0;i<480;i+=10) {
     var y = 0;
-    fill("red");
+    fill("white");
     stroke(0);
     rect(width/2,y+i,10,480);
     }
@@ -93,7 +93,7 @@ function midline(){
 function drawScore(){
     textAlign(CENTER);
     textSize(20);
-    fill("red");
+    fill("white");
     stroke(250,0,0)
     text("Jogador:",100,50)
     text(playerscore,180,50);
@@ -128,8 +128,8 @@ if(pcscore ==4){
     fill("#FFA500");
     stroke(0)
     rect(0,0,width,height-1);
-    fill("red");
-    stroke("red");
+    fill("white");
+    stroke("white");
     textSize(25)
     text("Game Over!☹☹",width/2,height/2);
     text("Recarregue a página!",width/2,height/2+30)
